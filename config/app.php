@@ -159,6 +159,11 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Repositories\MessageServiceProvide::class,
+        App\Repositories\AnswerServiceProvide::class,
+        App\Repositories\UserServiceProvide::class,
+        App\Repositories\LikeServiceProvide::class,
+        App\Providers\WidgetServiceProvider::class,
 
     ],
 

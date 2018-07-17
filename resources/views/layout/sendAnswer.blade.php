@@ -1,3 +1,4 @@
+
 @section('sendAnswer')
 
     <form action="{{ route('index') }}" class="form-horizontal" name="sendAnswer" method="post">

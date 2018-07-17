@@ -4,12 +4,9 @@
 @extends('layout.profileMenu')
 @extends('layout.authMenu')
 @extends('layout.sendMessage')
-@extends('layout.sendAnswer')
 
 @section('blog')
-
-    @foreach($messages as $message)
-        {{$message->name}}
-    @endforeach
-
+@foreach($widgets)
+    @widget('message')
+@endforeach
 @endsection
