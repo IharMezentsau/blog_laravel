@@ -17,9 +17,11 @@
 
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
-
-                    @yield('profileMenu')
-                    @yield('authMenu')
+                    @guest
+                        @yield('authMenu')
+                    @else
+                        {!! $viewProfileMenu !!}
+                    @endguest
                     <!-- Control Sidebar Toggle Button -->
                 </ul>
             </div>

@@ -10,9 +10,11 @@ class Like extends Model
     protected $table = 't_like';
     protected $primaryKey = 'id';
 
-    //const CREATED_AT = 'date';
-
     public $timestamps = false;
+
+    protected $fillable = [
+        'user_id', 'message_id'
+    ];
 
     public function message()
     {

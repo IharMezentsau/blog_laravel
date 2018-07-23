@@ -11,14 +11,6 @@
 
         public function boot(){
 
-            /*Relation::morphMap([
-                'answer' => App\Answer::class,
-                'like' => App\Like::class,
-                'user' => App\User::class,
-            ]);*/
-
-
-
         }
 
         public function register(){

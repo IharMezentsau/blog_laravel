@@ -7,6 +7,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
         <title>{{ $title }}</title>
 
         <link rel="stylesheet" href="{{ asset('lib/node_modules/bootstrap3/dist/css/bootstrap.css') }}">
@@ -20,10 +22,11 @@
         <div>
 
             @yield('menu')
-            @yield('regForm')
-            @yield('sendMessage')
-            @yield('sendAnswer')
+            @guest
+                @yield('regForm')
+            @endguest
             @yield('blog')
+            @yield('profile')
 
         </div>
         <script src="{{ asset('lib/node_modules/jquery/dist/jquery.min.js') }}"></script>
@@ -36,7 +39,7 @@
 
         <script type="text/javascript" src="{{ asset('js/toggleTooltip.js') }}"></script>
 
-        <script type="text/javascript" src="{{ asset('js/validate.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/nameUploadAvatar.js') }}"></script>
 
         <script type="text/javascript" src="{{ asset('js/like.js') }}"></script>
 

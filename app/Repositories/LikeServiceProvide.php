@@ -10,10 +10,6 @@
         public function boot()
         {
 
-            Relation::morphMap([
-                'message' => App\Message::class,
-                'user' => App\User::class,
-            ]);
         }
 
         public function register()

@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ru',
 
     /*
     |--------------------------------------------------------------------------
@@ -163,7 +163,6 @@ return [
         App\Repositories\AnswerServiceProvide::class,
         App\Repositories\UserServiceProvide::class,
         App\Repositories\LikeServiceProvide::class,
-        App\Providers\WidgetServiceProvider::class,
 
     ],
 

@@ -16,7 +16,7 @@ class PagesMiddleware
     public function handle($request, Closure $next, $page)
     {
         if ($request->route('page') != $page){
-            return redirect()->route('index');
+            return redirect()->route('/');
         }
         return $next($request);
     }

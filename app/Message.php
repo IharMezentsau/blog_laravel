@@ -4,16 +4,17 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-//use Greabock\Tentacles\EloquentTentacle;
+
 
 class Message extends Model
 {
-  //  use EloquentTentacle;
 
     protected $table = 't_message';
     protected $primaryKey = 'id';
 
-    //const CREATED_AT = 'date';
+    protected $fillable = [
+        'date', 'user_id', 'message'
+    ];
 
     public $timestamps = false;
 
@@ -25,10 +26,7 @@ class Message extends Model
         return $this->hasMany('App\Like', 'message_id');
     }
 
-    public function user()
-    {
-        return $this->hasOne('App\User', 'user_id');
-    }
+
 
 
 

@@ -12,17 +12,12 @@
 
         public function __construct(MessageRepository $messageRepository)
         {
-
             $this->messageRepository = $messageRepository;
-
         }
 
         public function getMessageWithUser(){
-            /*$numPost = 1;
-            $viewMessage = 10;
-            return $this->messageRepository->getAll($numPost, $viewMessage)->get();*/
-            return $this->messageRepository->getAll()->get();
-
+            return $this->messageRepository->getAll()->paginate(10);
+            //get();
         }
 
     }

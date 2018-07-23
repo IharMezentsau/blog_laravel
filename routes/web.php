@@ -10,19 +10,27 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
-Route::get('/', 'IndexController@index')->name('index');
+Route::get('index', 'IndexController@index')->name('index');
 
-Route::get('/page/{page}', ['uses' => 'IndexController@getPages', 'as' => 'getPages', 'middleware' => 'pages:page'])->where('page', '[0-9]+');
+Route::get('/', 'IndexController@logOut');
 
-Route::group(['prefix'=>'index'], function () {
+Route::get('login', function (){
+    return redirect('index');
+})->name('login');
+
+Route::post('/newMessage', 'MessageController@addMessage')->name('newMessage');
+Route::post('/newAnswer', 'AnswerController@addAnswer')->name('newAnswer');
+
+Route::any('/like', 'LikeController@like');
+
+Route::group(['prefix' => 'profile', 'middleware' => ['web', 'auth']], function (){
+    Route::get('/', 'ProfileController@profile')->name('profile');
+    Route::any('/delAva', 'ProfileController@delAva')->name('delAva');
+    Route::any('/update', 'ProfileController@update')->name('update');
+    Route::get('/edit', 'ProfileController@edit')->name('edit');
 
 });
 
-Route::post('/newMessage', 'MessageController@addMessage')->name('newMessage');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-//Route::get('/registration', '')->name('registartion');
